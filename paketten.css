@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rood: #E8194B;
+  --donker: #0D0D0D;
+  --wit: #FFFFFF;
+  --grijs: #F7F7F9;
+  --tekst-grijs: #6B7280;
+  --rand: #E5E7EB;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--donker);
+  background: var(--wit);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  border-bottom: 1px solid var(--rand);
+  position: sticky;
+  top: 0;
+  background: var(--wit);
+  z-index: 99;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logo span { color: var(--rood); }
+
+nav ul {
+  display: flex;
+  gap: 36px;
+}
+
+nav ul a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--tekst-grijs);
+  transition: color 0.15s;
+}
+
+nav ul a:hover,
+nav ul a.actief { color: var(--donker); }
+
+.nav-rechts {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-rechts a:first-child {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--tekst-grijs);
+}
+
+.knop {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.knop-rood { background: var(--rood); color: var(--wit); }
+.knop-rood:hover { background: #C0123A; transform: translateY(-1px); }
+.knop-rand { background: transparent; color: var(--donker); border: 1.5px solid var(--rand); }
+.knop-rand:hover { border-color: var(--donker); }
+
+.header {
+  background: var(--grijs);
+  padding: 72px 48px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--rand);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--rood);
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: var(--tekst-grijs);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.pakketten {
+  padding: 64px 48px;
+  background: var(--wit);
+}
+
+.pakketten-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.pakket {
+  border: 1.5px solid var(--rand);
+  border-radius: 14px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.pakket:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.09); }
+
+.pakket-populair {
+  border-color: var(--rood);
+  background: linear-gradient(180deg, rgba(232,25,75,0.03) 0%, var(--wit) 60%);
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--rood);
+  color: var(--wit);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.pakket-naam {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--rood);
+  margin-bottom: 4px;
+}
+
+.pakket-omschrijving {
+  font-size: 0.84rem;
+  color: var(--tekst-grijs);
+  margin-bottom: 20px;
+}
+
+.pakket-prijs {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.pakket-prijs .valuta {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+.pakket-periode {
+  font-size: 0.8rem;
+  color: var(--tekst-grijs);
+  margin-bottom: 24px;
+}
+
+.pakket-lijst {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.pakket-lijst li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.87rem;
+}
+
+.pakket-lijst li::before {
+  content: '✓';
+  width: 18px;
+  height: 18px;
+  background: rgba(232,25,75,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rood);
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pakket .knop { width: 100%; justify-content: center; }
+
+.vergelijk {
+  background: var(--grijs);
+  padding: 64px 48px;
+}
+
+.vergelijk h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.tabel {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--wit);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1050px;
+  margin: 0 auto;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.tabel th {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--rand);
+}
+
+.tabel th:first-child { color: var(--tekst-grijs); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.07em; }
+.tabel th.medium { color: var(--rood); }
+
+.tabel td {
+  padding: 14px 24px;
+  font-size: 0.87rem;
+  border-bottom: 1px solid var(--rand);
+}
+
+.tabel tr:last-child td { border-bottom: none; }
+.tabel tr:hover td { background: var(--grijs); }
+
+.ja { color: var(--rood); font-weight: 700; }
+.nee { color: var(--rand); }
+
+footer {
+  background: var(--donker);
+  color: rgba(255,255,255,0.6);
+  padding: 64px 48px 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto 48px;
+}
+
+.footer-merk .logo { color: var(--wit); margin-bottom: 12px; display: inline-block; }
+.footer-merk p { font-size: 0.85rem; line-height: 1.7; }
+
+.footer-col h4 {
+  color: var(--wit);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.footer-col a { display: block; font-size: 0.84rem; margin-bottom: 8px; transition: color 0.15s; }
+.footer-col a:hover { color: var(--wit); }
+
+.footer-onder {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  nav ul { display: none; }
+  .pakketten-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
